@@ -4,7 +4,8 @@ function happyBirthday(name){
 }
 
 
-const name = "Платон"
+const Name = "Платон"
 
 const year = 2008
-happyBirthday(name)
+
+happyBirthday(Name)
