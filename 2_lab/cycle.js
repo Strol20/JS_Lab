@@ -1,24 +1,29 @@
-function average (num_1, num_2){
-    return (num_1+num_2)/2
+// Реалізуйте функцію range(start: number, end: number): array яка віддає масив чисел з діапазону [15, 30], включаючи крайні числа.
+// Реалізуйте функцію rangeOdd(start: number, end: number): array яка віддає масив непарних чисел з діапазону [15, 30], включаючи крайні числа.
+
+function range (start, end){
+    const arrayRange = []
+    for (let cycleStart = start; cycleStart <= end; cycleStart++){
+        arrayRange.push(cycleStart)
+    }  
+    return arrayRange;
 }
 
-function square (num_x){
-    return num_x**2
+function rangeOdd (start, end){
+    const arrayRange = []
+    for (let cycleStart = start; cycleStart <= end; cycleStart++){
+        if (cycleStart%2 != 0){
+            console.log(cycleStart%2)
+            arrayRange.push(cycleStart)
+        }
+    }  
+    return arrayRange;
 }
 
-function cube (num_x){
-    return num_x**3
-}
+array1 = range(15, 30)
+array2 = rangeOdd (15, 30)
 
-function calculate (){
-    arayCalculate = []
-    for (num_x = 0; num_x < 9; num_x++){
-        num_x_square = square(num_x)
-        num_x_cube = cube(num_x)
-        num_x_average = average(num_x_square, num_x_cube)
-        arayCalculate.push(num_x_average)
-    }
-    return arayCalculate
-}
+console.log(array1)
 
-console.dir(calculate())
+
+

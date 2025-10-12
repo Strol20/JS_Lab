@@ -20,6 +20,7 @@ function createUser(name, city){
     return {name: name, city: city}
 }
 
+
 user1 = createUser("Anton", "Kiyv")
 
 console.dir(user1)
