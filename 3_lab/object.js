@@ -11,7 +11,7 @@ const iface = {
 
 function introspection(object){
     const result = [];
-    for (let key in object) {
+    for (const key in object) {
       if (typeof object[key] == "function") {
         result.push([key, object[key].length]);
       }
