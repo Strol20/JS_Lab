@@ -36,6 +36,8 @@ function array(arg){
     return base;
 }
 
+
+
 const arr = array();
 
 arr.push('first');
