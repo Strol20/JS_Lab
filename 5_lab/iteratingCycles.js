@@ -1,56 +1,45 @@
-// function seq (...arg){
-
-
-// }
-
-// seq(x => x + 7)
-//    (x => x * 2)(5)
-
-// // Результат: 17
-// seq(x => x * 2)
-//    (x => x + 7)(5)
-
-// // Результат: 24
-// seq(x => x + 1)
-//    (x => x * 2)
-//    (x => x / 3)
-//    (x => x - 4)(7)
-
-
-function array(arg){
-    let data = [];
-    function base(index){
-        return data[index];
+function seq (arg){
+    const data = []
+    if(typeof arg == "function"){
+            data.unshift(arg);
     }
-
-    base.push = function(component){
-        data.push(component);
-        return base;
-    };
-
-    base.pop = function(){
-        return data.pop();
-    };
-
-
+        
+    function base(argu){
+        if(typeof argu == "function"){
+            data.unshift(argu)
+            return base;
+        }
+        if (typeof argu == "number"){
+            x = argu
+            const result = data.reduce(function(accumulator, currentValue) {
+                        return data.reduce((acc, fn) => fn(acc), argu);});
+            return result;
+        }
+ 
+    }
     return base;
+
 }
 
 
 
-const arr = array();
 
-arr.push('first');
-arr.push('second');
-arr.push('third');
+a = seq(x => x + 7)
+   (x => x * 2)(5)
+console.log(a)
+// Результат: 17
 
-console.log(arr(0)); // Выводит: first
-console.log(arr(1)); // Выводит: second
-console.log(arr(2)); // Выводит: third
+b = seq(x => x * 2)
+   (x => x + 7)(5)
+console.log(b)
+// Результат: 24
 
-console.log(arr.pop()); // Выводит: third
-console.log(arr.pop()); // Выводит: second
-console.log(arr.pop()); // Выводит: first
+c = seq(x => x + 1)
+    (x => x * 2)
+    (x => x / 3)
+    (x => x - 4)(7)
+console.log(c)
+// Результат: 3
 
-console.log(arr.pop()); // Выводит: undefined
+
 
