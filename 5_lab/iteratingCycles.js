@@ -11,8 +11,7 @@ function seq (arg){
         }
         if (typeof argu == "number"){
             x = argu
-            const result = data.reduce(function(accumulator, currentValue) {
-                        return data.reduce((acc, fn) => fn(acc), argu);});
+            const result = data.reduce((accumulator, curentFunction) => curentFunction(accumulator), argu);
             return result;
         }
  
