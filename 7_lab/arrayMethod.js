@@ -1,5 +1,5 @@
 //#1--------
-
+// Результат: ['Kiev', 'Beijing', 'Saratov']
 function removeElement(arr, component){
     let index = 0;
     for(curentElement of arr){
@@ -14,10 +14,10 @@ const arraya = ['Kiev', 'Beijing', 'Lima', 'Saratov'];
 removeElement(arraya, 'Lima'); // удалит 'Lima' из массива
 removeElement(arraya, 'Berlin'); // не удалит ничего
 console.log(arraya);
-// Результат: ['Kiev', 'Beijing', 'Saratov']
+
 
 // #2--------
-
+// Результат: ['Beijing', 'Saratov']
 function removeElementsBetter(...arg){
     arr = arg[0]
     removArr = [];
@@ -44,9 +44,10 @@ function removeElementsBetter(...arg){
 const arrayb = ['Kiev', 'Beijing', 'Lima', 'Saratov'];
 removeElementsBetter(arrayb, 'Lima', 'Berlin', 'Kiev');
 console.log(arrayb);
-// Результат: ['Beijing', 'Saratov']
 
 //#3--------
+// Результат: [2, 1, 3]
+
 function unique(arr){
     const uniqArr = []
     uniqArr.push(arr[0])
@@ -72,10 +73,10 @@ function unique(arr){
 const result = unique([2, 1, 1, 3, 2]);
 console.log(result);
 
-// Результат: [2, 1, 3]
+
 
 //#4--------
-
+// Результат: [7, -2, 5]
 function difference(array1, array2){
     let index = 0;
     let indexUniq = 0;
@@ -97,4 +98,3 @@ const array1 = [7, -2, 10, 5, 0];
 const array2 = [0, 10];
 const result4 = difference(array1, array2);
 console.log(result4);
-// Результат: [7, -2, 5]
