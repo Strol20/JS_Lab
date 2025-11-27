@@ -79,13 +79,10 @@ console.log(result);
 function difference(array1, array2){
     let index = 0;
     let indexUniq = 0;
-    console.log(array2)
     for(curentElement of array1){
-        console.log("ЗАНОВО")
         indexUniq = 0;
         for(curentElementUniq of array2){
             indexUniq++;
-            console.log("aad",curentElement)
             if(curentElementUniq == curentElement){
                 array1.splice(index, 1)
                 break;
